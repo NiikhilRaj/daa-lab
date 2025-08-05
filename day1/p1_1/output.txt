@@ -1,0 +1,2 @@
+Second largest element: 21919
+Second smallest element: 1
