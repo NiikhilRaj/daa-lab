@@ -1,0 +1,23 @@
+MERGE SORT PERFORMANCE ANALYSIS
+================================
+Test conducted on: Aug 12 2025
+
+Data Type    Size     Comparisons  Time (ns)      
+---------    ----     -----------  ---------      
+Ascending    Default  1577         40025          
+Descending   Default  1411         38051          
+Random       Default  2541         51175          
+Ascending    5K       32004        652897         
+Descending   5K       29804        743166         
+Random       5K       55241        1037124        
+Ascending    10K      69008        1537158        
+Descending   10K      64608        1532688        
+Random       10K      120467       3148123        
+
+
+SUMMARY:
+--------
+• Merge Sort has O(n log n) time complexity
+• Random data typically requires more comparisons than sorted data
+• Execution time increases with data size
+• Algorithm is stable and works well for all input patterns

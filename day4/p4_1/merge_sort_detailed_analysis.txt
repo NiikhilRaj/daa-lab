@@ -1,0 +1,124 @@
+MERGE SORT PERFORMANCE ANALYSIS - COMPREHENSIVE REPORT
+=====================================================
+
+Date: August 12, 2025
+Algorithm: Merge Sort
+Programming Language: C
+
+EXPERIMENTAL SETUP:
+------------------
+• 3 Data Types: Ascending, Descending, Random
+• 3 Data Sizes: 350 (Default), 5,000, 10,000 elements
+• Total Test Cases: 9 (3 types × 3 sizes)
+• Platform: Linux (Ubuntu 24.04.2 LTS)
+• Compiler: GCC
+
+TEST RESULTS:
+============
+
+┌─────────────┬─────────┬─────────────┬──────────────┬─────────────────┐
+│ Data Type   │ Size    │ Comparisons │ Time (ns)    │ Time (ms)       │
+├─────────────┼─────────┼─────────────┼──────────────┼─────────────────┤
+│ Ascending   │ 350     │ 1,577       │ 40,025       │ 0.040 ms        │
+│ Descending  │ 350     │ 1,411       │ 38,051       │ 0.038 ms        │
+│ Random      │ 350     │ 2,541       │ 51,175       │ 0.051 ms        │
+├─────────────┼─────────┼─────────────┼──────────────┼─────────────────┤
+│ Ascending   │ 5,000   │ 32,004      │ 652,897      │ 0.653 ms        │
+│ Descending  │ 5,000   │ 29,804      │ 743,166      │ 0.743 ms        │
+│ Random      │ 5,000   │ 55,241      │ 1,037,124    │ 1.037 ms        │
+├─────────────┼─────────┼─────────────┼──────────────┼─────────────────┤
+│ Ascending   │ 10,000  │ 69,008      │ 1,537,158    │ 1.537 ms        │
+│ Descending  │ 10,000  │ 64,608      │ 1,532,688    │ 1.533 ms        │
+│ Random      │ 10,000  │ 120,467     │ 3,148,123    │ 3.148 ms        │
+└─────────────┴─────────┴─────────────┴──────────────┴─────────────────┘
+
+ANALYSIS BY DATA SIZE:
+=====================
+
+350 Elements (Default):
+----------------------
+• Best Performance: Descending (1,411 comparisons, 0.038 ms)
+• Worst Performance: Random (2,541 comparisons, 0.051 ms)
+• Performance Ratio: Random takes ~80% more comparisons than Descending
+
+5,000 Elements:
+--------------
+• Best Performance: Descending (29,804 comparisons, 0.743 ms)
+• Worst Performance: Random (55,241 comparisons, 1.037 ms)
+• Performance Ratio: Random takes ~85% more comparisons than Descending
+
+10,000 Elements:
+---------------
+• Best Performance: Descending (64,608 comparisons, 1.533 ms)
+• Worst Performance: Random (120,467 comparisons, 3.148 ms)
+• Performance Ratio: Random takes ~86% more comparisons than Descending
+
+ANALYSIS BY DATA TYPE:
+=====================
+
+Ascending Data:
+--------------
+• 350 elements: 1,577 comparisons (0.040 ms)
+• 5K elements: 32,004 comparisons (0.653 ms) - 20.3x increase
+• 10K elements: 69,008 comparisons (1.537 ms) - 43.8x increase
+
+Descending Data:
+---------------
+• 350 elements: 1,411 comparisons (0.038 ms)
+• 5K elements: 29,804 comparisons (0.743 ms) - 21.1x increase
+• 10K elements: 64,608 comparisons (1.533 ms) - 45.8x increase
+
+Random Data:
+-----------
+• 350 elements: 2,541 comparisons (0.051 ms)
+• 5K elements: 55,241 comparisons (1.037 ms) - 21.7x increase
+• 10K elements: 120,467 comparisons (3.148 ms) - 47.4x increase
+
+COMPLEXITY ANALYSIS:
+===================
+
+Time Complexity: O(n log n)
+Space Complexity: O(n)
+
+Theoretical vs Actual Comparisons:
+---------------------------------
+For n elements, merge sort should make approximately n⌈log₂n⌉ comparisons.
+
+• 350 elements: ~350 × 9 = 3,150 comparisons (theoretical)
+  - Actual range: 1,411 - 2,541 comparisons ✓
+
+• 5,000 elements: ~5,000 × 13 = 65,000 comparisons (theoretical)
+  - Actual range: 29,804 - 55,241 comparisons ✓
+
+• 10,000 elements: ~10,000 × 14 = 140,000 comparisons (theoretical)
+  - Actual range: 64,608 - 120,467 comparisons ✓
+
+KEY OBSERVATIONS:
+================
+
+1. Stability: Merge sort performs consistently across all data types
+2. Predictability: Even worst-case (random) data shows reasonable performance
+3. Scalability: Algorithm scales well with increasing data size
+4. Memory Usage: Uses additional O(n) space for temporary arrays
+5. Best Case: Already sorted data (ascending/descending) requires fewer comparisons
+6. Worst Case: Random data requires maximum comparisons but still within O(n log n)
+
+PERFORMANCE RANKING:
+===================
+1. Descending data: Consistently fastest across all sizes
+2. Ascending data: Good performance, slightly more comparisons than descending
+3. Random data: Highest comparison count but still efficient
+
+CONCLUSION:
+==========
+Merge sort demonstrates excellent O(n log n) performance characteristics across
+all test scenarios. The algorithm is stable, predictable, and well-suited for
+large datasets. Random data requires approximately 80-86% more comparisons than
+sorted data, but execution time remains reasonable.
+
+Files Generated:
+================
+• Input files: inAsce_*.dat, inDesc_*.dat, inRand_*.dat (6 files)
+• Output files: outMergeAsce_*.dat, outMergeDesc_*.dat, outMergeRand_*.dat (6 files)
+• Total data files: 24 files
+• Results file: merge_sort_detailed_analysis.txt

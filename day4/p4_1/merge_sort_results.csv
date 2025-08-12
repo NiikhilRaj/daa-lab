@@ -1,0 +1,10 @@
+Data_Type,Size,Size_Label,Comparisons,Time_Nanoseconds,Time_Milliseconds
+Ascending,350,Default,1577,40025,0.040
+Descending,350,Default,1411,38051,0.038
+Random,350,Default,2541,51175,0.051
+Ascending,5000,5K,32004,652897,0.653
+Descending,5000,5K,29804,743166,0.743
+Random,5000,5K,55241,1037124,1.037
+Ascending,10000,10K,69008,1537158,1.537
+Descending,10000,10K,64608,1532688,1.533
+Random,10000,10K,120467,3148123,3.148
