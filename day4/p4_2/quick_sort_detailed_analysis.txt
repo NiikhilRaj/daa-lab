@@ -1,0 +1,2 @@
+# Detailed analysis for quicksort (p4_2)
+# Add your analysis and observations here after running the tests.

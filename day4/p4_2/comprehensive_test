@@ -1,0 +1,32 @@
+#!/bin/bash
+# Comprehensive test for quicksort (p4_2)
+
+echo "Testing Ascending Data (all sizes):"
+for f in inAsce*.dat; do
+  if [ -f "$f" ]; then
+    echo "Input: $f"
+    cp "$f" inAsce.dat
+    ./p4_2 < <(echo 1)
+    mv outQuickAsce.dat "outQuickAsce_${f#inAsce}"
+  fi
+done
+
+echo "Testing Descending Data (all sizes):"
+for f in inDesc*.dat; do
+  if [ -f "$f" ]; then
+    echo "Input: $f"
+    cp "$f" inDesc.dat
+    ./p4_2 < <(echo 2)
+    mv outQuickDesc.dat "outQuickDesc_${f#inDesc}"
+  fi
+done
+
+echo "Testing Random Data (all sizes):"
+for f in inRand*.dat; do
+  if [ -f "$f" ]; then
+    echo "Input: $f"
+    cp "$f" inRand.dat
+    ./p4_2 < <(echo 3)
+    mv outQuickRand.dat "outQuickRand_${f#inRand}"
+  fi
+done
